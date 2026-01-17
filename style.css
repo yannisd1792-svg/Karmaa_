@@ -1,0 +1,430 @@
+/*
+==================================================
+Copyright & Droits d’auteur
+
+© 2026 Y4nnxs. Tous droits réservés.
+
+L’ensemble du contenu présent sur ce site, incluant, de manière non limitative,
+les textes, graphismes, logos, icônes, images, animations, sons, vidéos, ainsi
+que le code source (HTML, CSS, JavaScript et tout autre langage utilisé),
+est la propriété exclusive de Y4nnxs, sauf mention contraire explicite.
+
+Toute reproduction, représentation, modification, adaptation, diffusion ou
+exploitation, totale ou partielle, du contenu de ce site, par quelque procédé
+que ce soit, sans l’autorisation écrite préalable de Y4nnxs, est strictement
+interdite et constitue une violation des dispositions du Code de la propriété
+intellectuelle et des lois internationales relatives au droit d’auteur.
+
+L’utilisation du contenu de ce site est autorisée uniquement à des fins
+personnelles et non commerciales, sauf autorisation expresse.
+
+Y4nnxs ne pourra être tenu responsable des dommages directs ou indirects
+pouvant résulter de l’accès ou de l’utilisation de ce site.
+
+==================================================
+*/
+
+
+
+
+/* ========================= */
+/* RESET GLOBAL              */
+/* ========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    text-align: center;
+    margin-top: 50px; /* décalage pour laisser de la place au titre */
+    font-family: 'BBH Hegarty', sans-serif;
+    background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(59, 59, 59) 100%);
+    height: 100%;
+    color: white;
+}
+
+html{
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+/* Conteneur des cartes */
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px; /* décalage supplémentaire si nécessaire */
+}
+
+/* Cartes carrées */
+
+
+.card {
+    width: 220px;
+    height: 220px;
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255,255,255,0.2);
+
+    display: flex;
+    flex-direction: column;      /* NOUVEAU */
+    justify-content: space-between; /* NOUVEAU */
+    align-items: center;          /* OK */
+
+    padding: 15px;                /* NOUVEAU */
+
+    box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* Titre centré */
+.card-title {
+    font-size: 18px;
+    text-align: center;
+    font-weight: 200;
+}
+
+.card-desc {
+    font-size: 14px;
+    text-align: center;
+    opacity: 0.85;
+    font-weight: 200;
+}
+
+
+/* Texte centré verticalement */
+.card p {
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+/* Boutons remplacés par des div */
+.card-btn {
+    padding: 8px 15px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: 'BBH Hegarty', sans-serif;
+    user-select: none; /* empêche la sélection du texte */
+    text-align: center;
+}
+
+/* Hover effet */
+.card-btn:hover {
+    background-color: #000000;
+    color: white;
+    transform: translateY(-2px); /* léger effet interactif */
+}
+
+
+
+/* ========================= */
+/* TITRES                    */
+/* ========================= */
+.title {
+    font-size: 40px;
+    font-weight: 200;
+    margin-bottom: 40px;
+    color:#d8d8d8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 200;
+    margin-bottom: 40px;
+    color:#d8d8d8;
+}
+
+.pdp { 
+    width: 100%; 
+    height: 100%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    scale: 0.9;
+}
+
+.pdp img {
+    border-radius: 50%;
+    box-shadow: 0 20px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pdp img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    box-shadow: 0 20px 12px rgba(101, 101, 101, 0.4);
+}
+
+.pdp:hover::after{
+    transition: all 0.3s ease;
+}
+
+a.card-btn{
+    text-decoration: none;
+}
+
+
+/* ========================= */
+/* LISTES ET PARAGRAPHES     */
+/* ========================= */
+li {
+    font-size: 30px;
+    font-weight: 300;
+    color: #ffffff;
+}
+
+p {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+
+
+/* ========================= */
+/* SIDEBAR FIXE              */
+/* ========================= */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 10px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+    border-radius: 20px;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Boutons de la sidebar */
+.sidebar-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* ========================= */
+/*         BOUTONS           */
+/* ========================= */
+.btn, .btn-command, .btn-menu {
+    position: relative; /* nécessaire pour le pseudo-élément */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    overflow: hidden; /* pour clip pseudo-élément */
+    transition: transform 0.2s, background-color 0.3s;
+    background-color: #777777;
+}
+
+.btn1 {
+    position: relative; /* nécessaire pour le pseudo-élément */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    overflow: hidden; /* pour clip pseudo-élément */
+    transition: transform 0.2s, background-color 0.3s;
+    background-color: #ffffff;
+    font-size: 20px;
+    margin-left: 25px;
+    margin-right: 950px;
+    margin-top: 20px;
+    left: 450px;
+    size-adjust: auto;
+}
+
+
+.btn::after, .btn-command::after, .btn-menu::after, .btn1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    box-shadow:
+       -7px -7px 20px 0px #fff9,
+       -4px -4px 5px 0px #fff9,
+       7px 7px 20px 0px #0002,
+       4px 4px 5px 0px #0001;
+    transition: all 0.3s ease;
+}
+
+/* Hover pseudo-element */
+.btn:hover::after, .btn-command:hover::after, .btn-menu:hover::after, .btn1:hover::after {
+    left: auto;
+    right: 0;
+    width: 100%;
+}
+
+/* Hover bouton */
+.btn:hover, .btn-command:hover, .btn-menu:hover, .btn1:hover {
+    transform: scale(1.05);
+    background-color: #2c2c2c;
+}
+
+/* Active click */
+.btn:active, .btn-command:active, .btn-menu:active, .btn1:active {
+    top: 2px;
+}
+
+
+.btn-icon, .btn-text {
+    color: #ffffff;
+    font-weight: 400;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Crédits en bas */
+.sidebar-credits {
+    font-size: 14px;
+    text-align: center;
+    color: #aaa;
+}
+
+
+
+
+/* ========================= */
+/* CONTENU PRINCIPAL          */
+/* ========================= */
+.main-content {
+    margin-left: 240px; /* laisser la place à la sidebar */
+    padding: 20px;
+}
+
+
+::selection {
+    background: #79bcff;
+    color: #ffffff;
+}
+
+.texte {
+    color: #d8d8d8;
+    text-decoration: none;
+    font-weight: 200;
+}
+/* ========================= */
+/* RESPONSIVE                */
+/* ========================= */
+
+/* Tablette / écran moyen */
+@media screen and (max-width: 1024px) {
+    .sidebar {
+        width: 180px;
+        padding: 15px 8px;
+    }
+    .btn, .btn-command {
+        padding: 8px 12px;
+        font-size: 16px;
+    }
+    .btn-icon, .btn-text {
+        font-size: 16px;
+    }
+    .main-content {
+        margin-left: 200px;
+        padding: 15px;
+    }
+    .title {
+        font-size: 36px;
+    }
+    li, p, .gratuit {
+        font-size: 24px;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+    .sidebar {
+        width: 70px;
+        padding: 10px 5px;
+    }
+    .btn {
+        flex-direction: column;
+        padding: 6px 4px;
+        font-size: 14px;
+    }
+    .btn-text {
+        display: none;
+    }
+    .btn-icon {
+        font-size: 20px;
+    }
+    .sidebar-credits {
+        display: none;
+    }
+    .main-content {
+        margin-left: 80px;
+        padding: 10px;
+    }
+}
+
+/* Très petit écran */
+@media screen and (max-width: 400px) {
+    .sidebar {
+        width: 50px;
+        padding: 5px 2px;
+    }
+    .btn {
+        padding: 4px 2px;
+        gap: 0;
+    }
+    .btn-text {
+        display: none; 
+    }
+    .sidebar-credits {
+        display: none;
+    }
+    .main-content {
+        margin-left: 50px;
+        padding: 5px;
+    }
+}
+
